@@ -6,6 +6,9 @@ __pycache__/
 # C extensions
 *.so
 
+# Input File
+demats.txt
+
 # Distribution / packaging
 .Python
 build/
