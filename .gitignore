@@ -9,6 +9,9 @@ __pycache__/
 # Input File
 demats.txt
 
+# Temp test files
+*.tmp.py
+
 # Distribution / packaging
 .Python
 build/
