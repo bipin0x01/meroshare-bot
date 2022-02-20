@@ -3,7 +3,7 @@
 Step 1. Download the respective Chrome driver binary for your installed chrome version from the link below.
  ``` https://chromedriver.chromium.org/downloads ```
  
- ###Note: I am working on a solution to remove this step for users.
+*Note: I am working on a solution to remove this step for users.*
 
 Step 2. Go to the parent directory and run the following commands to install all the pre-requisites.
 
