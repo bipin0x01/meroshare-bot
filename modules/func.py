@@ -4,7 +4,7 @@ from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 
-import chromedriver_binary
+
 
 if __name__ != '__main__':
     options = webdriver.ChromeOptions()
@@ -115,7 +115,7 @@ def quit_browser():
     
 def reader(file_name):
     """
-    Reads a file and returns a list of lines.
+    Reads a file and returns a list of each lines as individual element.
     """
     # loop through each line separately
     with open(file_name, 'r') as f:
@@ -131,6 +131,7 @@ def reader(file_name):
 
 
 def input_parser(file):
+    'Takes the dict from of each lines, breaks them into another list of values seaprated by comma'
     i = []
     for item in file:
         i.append(item)

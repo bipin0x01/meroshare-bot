@@ -1,11 +1,16 @@
-from modules.func import login, goto_asba, apply_ipo, open_ipo_lister,ipo_selector,quit_browser,reader,input_parser
+from modules.func import *
 
 input_file = reader('demats.txt')
+
+# Gets the value from the lines of the input file
 input = input_parser(input_file)
 
 try:
     for account in input:
+        # Loops through each account in the input file
         account_data_length = len(account)
+        # Gets the length of the account data
+        # Gets the user creds from the account data
         name, dp_id, username, password, crn, txn_pin = [account[i] for i in range(account_data_length)]
         print("Logging in with {}'s account".format(name))
         try:
