@@ -9,6 +9,7 @@ __pycache__/
 # Input File
 demats.txt
 
+chromedriver.exe
 # Temp test files
 *.tmp.py
 
