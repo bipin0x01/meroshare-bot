@@ -1,6 +1,7 @@
 # Documentation Draft for MeroShare IPO Application Entry Bot
 
 Step 1. Download the respective Chrome driver binary for your installed chrome version from the link below.
+
 `https://chromedriver.chromium.org/downloads`
 
 _Note: I am working on a solution to remove this step for users._
