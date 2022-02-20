@@ -7,20 +7,24 @@ _Note: I am working on a solution to remove this step for users._
 
 Step 2. Activate the virtual env using following command.
 
-For Windows:
 On Unix or MacOS, using the bash shell:
+
 `source ./env/bin/activate`
 
 On Unix or MacOS, using the csh shell:
+
 `source ./env/bin/activate.csh`
 
 On Unix or MacOS, using the fish shell:
+
 `source ./env/bin/activate.fish`
 
 On Windows using the Command Prompt:
+
 `.\env\Scripts\activate.bat`
 
 On Windows using PowerShell:
+
 `.\env\Scripts\Activate.ps1`
 
 Step 3. Go to the parent directory and run the following commands to install all the pre-requisites.
