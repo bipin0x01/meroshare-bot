@@ -10,15 +10,15 @@ _Note: I am working on a solution to remove this step for users._
 
 On Unix or MacOS, using the bash shell:
 
-`source ./env/bin/activate`
+`source ./env/Scripts/activate`
 
 On Unix or MacOS, using the csh shell:
 
-`source ./env/bin/activate.csh`
+`source ./env/Scripts/activate.csh`
 
 On Unix or MacOS, using the fish shell:
 
-`source ./env/bin/activate.fish`
+`source ./env/Scripts/activate.fish`
 
 On Windows using the Command Prompt:
 
