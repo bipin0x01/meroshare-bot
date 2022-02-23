@@ -20,10 +20,10 @@ class web_driver():
     options.add_argument("--start-maximized")
 
     # add path to the chromedriver     
-    path = './chromedriver'
-    
+    chrome_driver_path = './chromedriver'
+
     # function that calls and runs the webdriver
-    driver= webdriver.Chrome(path, options=options)
+    driver= webdriver.Chrome(chrome_driver_path, options=options)
     wait = WebDriverWait(driver,30)
     
 
