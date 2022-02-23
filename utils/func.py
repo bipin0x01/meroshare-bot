@@ -19,11 +19,13 @@ class web_driver():
     options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36')
     options.add_argument("--start-maximized")
 
+    # add path to the chromedriver     
+    chrome_driver_path = './chromedriver'
+
     # function that calls and runs the webdriver
-
-    driver= webdriver.Chrome(options=options)
+    driver= webdriver.Chrome(chrome_driver_path, options=options)
     wait = WebDriverWait(driver,30)
-
+    
 
 def login(dp,username,password):
     web_driver.driver.get("https://meroshare.cdsc.com.np/#/login")
