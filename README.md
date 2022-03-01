@@ -1,9 +1,8 @@
 # Documentation
 
-### Step 1. Activate the virtual env using following command
+### Step 1. Install the required dependencies.
 
-[Install & activate virtual environment in the project root folder](https://uoa-eresearch.github.io/eresearch-cookbook/recipe/2014/11/26/python-virtual-env/)
-
+`pip3 install -r requirements.txt`
 
 ### Step 2. Edit the 'demats.txt' file and add all the accounts' information each account separated by a line break and each information separated by commas ','
 
@@ -14,3 +13,5 @@
 ### Step 3. After adding the account info's, execute the following command from the parent directory.
 
 `python3 ./main.py`
+
+Note: Use pip and python instead of pip3 and python3 respectively If you are not using python3+
