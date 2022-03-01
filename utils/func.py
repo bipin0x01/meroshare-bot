@@ -6,7 +6,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 
 from utils.dict_maker import IPODict
 
-import chromedriver_binary
+# import Driver installer 
+from webdriver_manager.chrome import ChromeDriverManager             # For Chrome
+# from webdriver_manager.microsoft import EdgeChromiumDriverManager # For Edge
+# from webdriver_manager.firefox import GeckoDriverManager          # For Firefox
 
 class web_driver():
     options = webdriver.ChromeOptions()
@@ -19,8 +22,8 @@ class web_driver():
     options.add_argument('user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/83.0.4103.61 Safari/537.36')
     options.add_argument("--start-maximized")
 
-    # add path to the chromedriver     
-    chrome_driver_path = './chromedriver'
+    # drivermanager automatically installs latest driver and set path to that driver     
+    chrome_driver_path = ChromeDriverManager().install()        # call drivermanager according to browser you use
 
     # function that calls and runs the webdriver
     driver= webdriver.Chrome(chrome_driver_path, options=options)
