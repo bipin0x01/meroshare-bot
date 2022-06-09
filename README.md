@@ -24,3 +24,5 @@ Extract the chromedriver.exe file in the root folder.
 `python3 ./main.py`
 
 Note: Use pip and python instead of pip3 and python3 respectively If you are not using python3+
+
+PS: If you find any bugs or issues while using the script, Submit an issue using the issues tab above 
