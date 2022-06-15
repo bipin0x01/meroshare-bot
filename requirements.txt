@@ -22,3 +22,5 @@ trio-websocket==0.9.2
 urllib3==1.26.8
 webdriver-manager==3.5.3
 wsproto==1.1.0
+termcolor==1.1.0
+tabulate==0.8.9
