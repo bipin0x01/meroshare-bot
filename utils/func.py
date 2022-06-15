@@ -3,6 +3,9 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from tabulate import tabulate
+import termcolor
+
 
 from utils.dict_maker import IPODict
 
@@ -11,10 +14,12 @@ from webdriver_manager.chrome import ChromeDriverManager             # For Chrom
 # from webdriver_manager.microsoft import EdgeChromiumDriverManager # For Edge
 # from webdriver_manager.firefox import GeckoDriverManager          # For Firefox
 
+
+
 class web_driver():
     options = webdriver.ChromeOptions()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    # options.headless = True
+    options.headless = True
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--window-size=1920x1080')
@@ -47,12 +52,10 @@ def login(dp,username,password):
         
 def goto_asba():
     web_driver.wait.until(EC.presence_of_element_located((By.TAG_NAME, "app-dashboard")))
-    print("Sign In Successful!")
     web_driver.wait.until(EC.presence_of_element_located((By.XPATH, "//*[@id='sideBar']/nav/ul/li[8]/a/span")))
     web_driver.driver.find_element(By.XPATH,"//*[@id='sideBar']/nav/ul/li[8]/a/span").click()
     # Wait until the page url changes to the asba page
     web_driver.wait.until(EC.url_to_be("https://meroshare.cdsc.com.np/#/asba"))
-    print("Welcome to Mero Share Portal ASBA Page")
 
 def open_ipo_lister():
     web_driver.driver.find_element(By.XPATH,'//*[@id="main"]/div/app-asba/div/div[1]/div/div/ul/li[1]').click()
@@ -62,10 +65,10 @@ def open_ipo_lister():
     IPOlist = web_driver.driver.find_elements(By.CLASS_NAME,"company-name")
     print("Total number of open IPO shares "+ str(len(IPOlist)))
     # find all the elements by XPATH and store the html in a list
-    print("IPO List Fetched Successfully! Showing all the results!!!!")
-    # create dictonary with the retrieved IPO details    
-    print("Name of Open IPOs with type")
-    IPODict(IPOlist)
+    termcolor.cprint("IPO List Fetched Successfully! Showing all the results!!!!", 'green')
+    col_names = ["Option", "Name of Company", "Type of Issue"]
+    data =IPODict(IPOlist)
+    print(tabulate(data, headers=col_names, tablefmt="grid"))
     
 def ipo_selector(ind=''):
     if ind=='':
@@ -76,7 +79,7 @@ def ipo_selector(ind=''):
         iposelector_index = '[{}]'.format(ind)
     apply_btn = web_driver.driver.find_element(By.XPATH,'//*[@id="main"]/div/app-asba/div/div[2]/app-applicable-issue/div/div/div/div/div' + iposelector_index +'/div/div[2]/div/div[4]/button')
     apply_btn.click()
-    return ("IPO Selected Successfully")
+    termcolor.cprint("IPO Selected Successfully",'green')
 
 def apply_ipo(kitta,crn,txn_pin):
     # wait until the page url changes to other than asba page
@@ -98,15 +101,18 @@ def apply_ipo(kitta,crn,txn_pin):
     pin_submit = web_driver.driver.find_element(By.XPATH,"//*[@id='main']/div/app-issue/div/wizard/div/wizard-step[2]/div[2]/div/form/div[2]/div/div/div/button[1]")
     web_driver.wait.until(EC.element_to_be_clickable((By.XPATH,"//*[@id='main']/div/app-issue/div/wizard/div/wizard-step[2]/div[2]/div/form/div[2]/div/div/div/button[1]")))
     pin_submit.click()
-    if EC.presence_of_element_located((By.CLASS_NAME,"toast-error")):
-        error = web_driver.driver.find_element(By.CLASS_NAME,"toast-error").text.split('\n')
-        print(error)
     msg = web_driver.driver.find_element(By.CLASS_NAME,"toast-message").text
-    if msg == 'Share has been applied successfully.':
-        print("IPO Application Successful")
+    # if message contains "Success" then print msg in green else print in red
+    if "successfully" in msg:
+        termcolor.cprint(msg,'green')
+    else:
+        termcolor.cprint(msg,'red')
 
 def quit_browser():
     web_driver.driver.quit()
     
-
-        
+def minimize_browser():
+    web_driver.driver.minimize_window()
+    
+def maximize_browser():
+    web_driver.driver.maximize_window()

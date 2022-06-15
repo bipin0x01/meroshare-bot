@@ -1,4 +1,5 @@
-name,dp-id,username,password,crn,txn-pin
-name,dp-id,username,password,crn,txn-pin
-name,dp-id,username,password,crn,txn-pin
-name,dp-id,username,password,crn,txn-pin
+Kshitiz Thapa,11700,01118962,Mnibt@6600,CZP04791760,2580
+Sushant Thapa,11700,01119757,Mnibt@6600,CZP04791786,2580
+Baldev Thapa,11700,01119611,Mnibt@6600,CZP04790905,2580
+Tara Thapa,11700,01118939,Mnibt@6600,CZP04790927,2580
+Bipin Thapa,11700,00629889,Mnibt@6600,CZP04582062,2580
