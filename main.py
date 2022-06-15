@@ -43,7 +43,7 @@ try:
         try:
             login(dp_id,username,password)
         except Exception as e:
-            print(e)
+            print('Could not login. Please check the login credentials and try again.')
             break
         sleep(1)
         goto_asba()
