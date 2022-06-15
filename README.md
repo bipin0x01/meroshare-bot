@@ -4,7 +4,7 @@
 
 `pip3 install -r requirements.txt`
 
-### Step 2. Edit the 'demats.txt' file and add all the accounts' information each account separated by a line break and each information separated by commas ','
+### Step 2. Edit the 'demats.txt' file and add all the accounts' information each account separated by a line break and each information separated by comma ',' and no spaces.
 
 #### Example
 
