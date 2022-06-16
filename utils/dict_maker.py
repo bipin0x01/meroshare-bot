@@ -1,10 +1,7 @@
 
 def IPODict(list):
         all_ipos = []
-        aaa=[]
-        for i in list:
-            ipo_details = i.text.split('\n')
-            aaa.append(ipo_details)
+        aaa=[i.text.split('\n') for i in list]
         IPOs = []
         for ipo in aaa:
             name = ipo[0]
