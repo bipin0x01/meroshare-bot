@@ -1,4 +1,4 @@
-# Documentation
+# How to use the tool?
 
 ### Step 1. Install the required dependencies.
 
