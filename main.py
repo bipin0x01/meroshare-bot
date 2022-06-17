@@ -49,13 +49,12 @@ try:
         goto_asba()
         sleep(1)
         try:
-            print(ipo_selector(share))
+            # select the ipo choosen from the list by the user
+            ipo_selector(share)
         except Exception as e:
             termcolor.cprint('Looks like you have already applied for this IPO from {}\'s account'.format(name), 'red')
             continue
-        sleep(1)
-        apply_ipo(number_kitta,crn,txn_pin)
-        # sleep for 5 seconds
+        sleep(1)        apply_ipo(number_kitta,crn,txn_pin)
         sleep(1)
     quit_browser()
 except Exception as e:

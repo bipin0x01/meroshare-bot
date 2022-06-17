@@ -3,6 +3,7 @@ from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support.select import Select
 from tabulate import tabulate
 import termcolor
 
@@ -68,7 +69,7 @@ def open_ipo_lister():
     termcolor.cprint("IPO List Fetched Successfully! Showing all the results!!!!", 'green')
     col_names = ["Option", "Name of Company", "Type of Issue"]
     data =IPODict(IPOlist)
-    print(tabulate(data, headers=col_names, tablefmt="grid"))
+    termcolor.cprint(tabulate(data, headers=col_names, tablefmt="grid"),'green')
     
 def ipo_selector(ind=''):
     if ind=='':
@@ -85,10 +86,32 @@ def apply_ipo(kitta,crn,txn_pin):
     # wait until the page url changes to other than asba page
     web_driver.wait.until_not(EC.url_to_be("https://meroshare.cdsc.com.np/#/asba"))
     # select and click element with name selectBank and click on it
-    web_driver.driver.find_element(By.XPATH,"//*[@id='selectBank']/option[2]").click()
+    bank_dropdown = Select(web_driver.driver.find_element(By.XPATH,"//*[@name='selectBank']"))
+    bank_list = bank_dropdown.options
+    # check if there are multiple bank accounts
+    if len(bank_list) > 1:
+        termcolor.cprint("Multiple bank accounts detected. Please select a bank account to continue...",'red')
+        # list bank accounts
+        banks = []
+        index = 1
+        for bank in bank_list:
+            banks.append([index-1,bank.text])
+            index += 1
+        # remove the first bank from the list
+        banks.pop(0)
+        col_names = ["option", "Bank Name"]
+        termcolor.cprint(tabulate(banks, headers=col_names, tablefmt="grid"),'red')
+        selected_bank = int(input("Select the respective option to continue:"))
+        # Select the bank choosen by the User
+        bank_dropdown.select_by_index(selected_bank+1)
+        select = bank_dropdown.select_by_index(selected_bank+1).text
+        print(select)
+    else:
+        # If only one bank account is linked, choose the first one
+        web_driver.driver.find_element(By.XPATH,"//*[@id='selectBank']/option[2]").click()
     appliedKitta = web_driver.driver.find_element(By.NAME,"appliedKitta")
     appliedKitta.send_keys(kitta)
-    web_driver.driver.implicitly_wait(10)
+    web_driver.driver.implicitly_wait(5)
     crninput = web_driver.driver.find_element(By.NAME,"crnNumber")
     crninput.send_keys(crn)
     web_driver.driver.find_element(By.NAME,"disclaimer").click()
