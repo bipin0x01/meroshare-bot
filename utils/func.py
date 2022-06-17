@@ -133,9 +133,4 @@ def apply_ipo(kitta,crn,txn_pin):
 
 def quit_browser():
     web_driver.driver.quit()
-    
-def minimize_browser():
-    web_driver.driver.minimize_window()
-    
-def maximize_browser():
-    web_driver.driver.maximize_window()
+

@@ -27,12 +27,10 @@ try:
 except Exception as e:
     print(e)
     quit_browser()
-minimize_browser()
     
 share = int(input('Press Enter the respective option to continue:'))
 number_kitta = int(input('Press Enter the number of units(kitta) to be applied.'))
 
-maximize_browser()
 try:
     for account in demats:
         # Loops through each account in the input file
