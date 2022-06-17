@@ -1,6 +1,4 @@
 from time import sleep
-
-
 from utils.func import *
 from utils.file_reader import file_reader
 from utils.input_parser import input_parser
@@ -10,7 +8,7 @@ input_file = file_reader('demats.txt')
 # Gets the value from the lines of the input file
 demats = input_parser(input_file)
 
-
+# List all open IPOS in a table using the first account given by user
 try:
     number_of_accounts = len(demats)
     print('Number of accounts Detected: %d' % number_of_accounts)
