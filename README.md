@@ -6,9 +6,15 @@
 
 ### Step 2. Edit the 'demats.txt' file and add all the accounts' information each account separated by a line break and each information separated by comma ',' and no spaces.
 
-#### Example
+#### FORMAT of demats.txt file
 
 `Name,DP-ID,USERNAME,PASSWORD,CRN,TXN-PIN`
+
+#### Example
+
+`Hari Bahadur,11700,00121273,Nepal@123,CZP12984124,0000`
+
+##### Name provided in the 'demats.txt' file is just for showing the progress in log and does not need to be the name used in the meroshare account.
 
 ### Step 3. After adding the account info's, execute the following command from the parent directory.
 
