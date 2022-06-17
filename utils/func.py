@@ -93,7 +93,9 @@ def apply_ipo(kitta,crn,txn_pin):
     bank_dropdown = Select(web_driver.driver.find_element(By.XPATH,"//*[@name='selectBank']"))
     bank_list = bank_dropdown.options
     # check if there are multiple bank accounts
-    if len(bank_list) > 1:
+    if len(bank_list) > 2:
+        # print empty line
+        print('\n')
         termcolor.cprint("Multiple bank accounts detected. Please select a bank account to continue...",'red')
         # list bank accounts
         banks = []
@@ -107,9 +109,8 @@ def apply_ipo(kitta,crn,txn_pin):
         termcolor.cprint(tabulate(banks, headers=col_names, tablefmt="grid"),'red')
         selected_bank = int(input("Select the respective option to continue:"))
         # Select the bank choosen by the User
-        bank_dropdown.select_by_index(selected_bank+1)
-        select = bank_dropdown.select_by_index(selected_bank+1).text
-        print(select)
+        
+        web_driver.driver.find_element(By.XPATH,"//*[@id='selectBank']/option[" + str(selected_bank+1) + "]").click()
     else:
         # If only one bank account is linked, choose the first one
         web_driver.driver.find_element(By.XPATH,"//*[@id='selectBank']/option[2]").click()
