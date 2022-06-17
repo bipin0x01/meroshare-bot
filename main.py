@@ -52,7 +52,8 @@ try:
         except Exception as e:
             termcolor.cprint('Looks like you have already applied for this IPO from {}\'s account'.format(name), 'red')
             continue
-        sleep(1)        apply_ipo(number_kitta,crn,txn_pin)
+        sleep(1)        
+        apply_ipo(number_kitta,crn,txn_pin)
         sleep(1)
     quit_browser()
 except Exception as e:
