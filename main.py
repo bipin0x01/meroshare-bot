@@ -17,7 +17,7 @@ try:
         try:
             while web_driver.driver.current_url != "https://meroshare.cdsc.com.np/#/dashboard":
                 login(dp_id,username,password)
-                sleep(3)
+                sleep(2)
                 if web_driver.driver.current_url == "https://meroshare.cdsc.com.np/#/dashboard":
                     break
         except:
@@ -42,13 +42,12 @@ try:
         try:
             while web_driver.driver.current_url != "https://meroshare.cdsc.com.np/#/dashboard":
                 login(dp_id,username,password)
-                
+                sleep(2)
                 if web_driver.driver.current_url == "https://meroshare.cdsc.com.np/#/dashboard":
                     break
         except Exception as e:
             print('Could not login. Please check the login credentials and try again.')
             break
-        sleep(1)
         print("Applying {} kitta IPO with {}'s account".format(number_kitta,name))
         goto_asba()
         sleep(1)
