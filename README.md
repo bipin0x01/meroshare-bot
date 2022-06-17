@@ -25,4 +25,4 @@ PS: If you find any bugs or issues while using the script, Submit an issue using
 
 ## Contribute
 
-Read the [contribution guide](contributing.md) and join the [contributors](https://github.com/bipin0x01/meroshare-bot/graphs/contributors)!
+Read the [contribution guide](CONTRIBUTING.md) and join the [contributors](https://github.com/bipin0x01/meroshare-bot/graphs/contributors)!
