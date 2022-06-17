@@ -1,3 +1,4 @@
+from time import sleep
 from selenium.webdriver.support import expected_conditions as EC
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
@@ -20,7 +21,7 @@ from webdriver_manager.chrome import ChromeDriverManager             # For Chrom
 class web_driver():
     options = webdriver.ChromeOptions()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
-    options.headless = True
+    # options.headless = True
     options.add_argument('--no-sandbox')
     options.add_argument('--disable-dev-shm-usage')
     options.add_argument('--window-size=1920x1080')
@@ -49,7 +50,10 @@ def login(dp,username,password):
     dpEntry.send_keys(Keys.ENTER)                                  # Press Enter
     web_driver.driver.find_element(By.NAME ,"username").send_keys(username)    # Enter the Username
     web_driver.driver.find_element(By.NAME ,"password").send_keys(password)    # Enter the Password    
+    sleep(1)
     web_driver.driver.find_element(By.CLASS_NAME ,"sign-in").click()        # Click on the Sign In Button
+    # check the url
+    
         
 def goto_asba():
     web_driver.wait.until(EC.presence_of_element_located((By.TAG_NAME, "app-dashboard")))

@@ -15,9 +15,13 @@ try:
     for account in demats:
         name, dp_id, username, password, crn, txn_pin = [account[i] for i in range(6)]
         try:
-            login(dp_id,username,password)
+            while web_driver.driver.current_url != "https://meroshare.cdsc.com.np/#/dashboard":
+                login(dp_id,username,password)
+                sleep(3)
+                if web_driver.driver.current_url == "https://meroshare.cdsc.com.np/#/dashboard":
+                    break
         except:
-            print('Could not login')
+            print('Could not login! Please try again')
             break
         goto_asba()
         open_ipo_lister()
@@ -35,13 +39,17 @@ try:
         account_data_length = len(account)
         # Gets the user creds from the account data
         name, dp_id, username, password, crn, txn_pin = [account[i] for i in range(6)]
-        print("Logging in with {}'s account".format(name))
         try:
-            login(dp_id,username,password)
+            while web_driver.driver.current_url != "https://meroshare.cdsc.com.np/#/dashboard":
+                login(dp_id,username,password)
+                
+                if web_driver.driver.current_url == "https://meroshare.cdsc.com.np/#/dashboard":
+                    break
         except Exception as e:
             print('Could not login. Please check the login credentials and try again.')
             break
         sleep(1)
+        print("Applying {} kitta IPO with {}'s account".format(number_kitta,name))
         goto_asba()
         sleep(1)
         try:
