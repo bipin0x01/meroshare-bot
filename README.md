@@ -27,7 +27,11 @@ Note: Name provided in the demats.txt file is just for showing the progress in
 
 ### 3. After adding the account info's, execute the following command from the parent directory.
 
-`python3 ./main.py`
+```
+python ./main.py
+# or
+python3 ./main.py
+```
 
 <br>
 
