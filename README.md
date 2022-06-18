@@ -2,7 +2,11 @@
 
 ### 1. Install the required dependencies.
 
-`pip3 install -r requirements.txt`
+```shell
+pip install -r requirements.txt
+# or
+python3 -m pip install -r requirements.txt
+```
 
 ### 2. Edit the **demats.txt** file and add all the accounts' information each account separated by a line break and each information separated by comma ',' and no spaces.
 
