@@ -40,3 +40,7 @@ python3 ./main.py
 # Contribute
 
 Read the [contribution guide](CONTRIBUTING.md) and join the [contributors](https://github.com/bipin0x01/meroshare-bot/graphs/contributors)!
+
+# Changelog
+
+[Changelog](CHANGELOG.md)
