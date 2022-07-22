@@ -44,3 +44,12 @@ Read the [contribution guide](CONTRIBUTING.md) and join the [contributors](https
 # Changelog
 
 [Changelog](CHANGELOG.md)
+
+# Donate
+
+Use Meroshare Bot to fill ipo with all demats at once and get IPOs alloted. IPO means more money. More money means more donation. More donation means more momos. More momos means more energy to contribute to opensource. More contribution means more value to you.
+
+So, Do you need more value?
+Wanna feed my belly then?
+
+[![Donate Now](https://img.shields.io/badge/Donate-green.svg)](https://www.buymeamomo.com/bt.kaji)
