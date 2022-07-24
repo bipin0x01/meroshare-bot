@@ -7,6 +7,10 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support.select import Select
 from tabulate import tabulate
 import termcolor
+import os
+        
+# disable logging for webdriver
+os.environ['WDM_LOG_LEVEL'] = '0'
 
 
 from utils.dict_maker import IPODict
@@ -15,8 +19,6 @@ from utils.dict_maker import IPODict
 from webdriver_manager.chrome import ChromeDriverManager             # For Chrome
 # from webdriver_manager.microsoft import EdgeChromiumDriverManager  # For Edge
 # from webdriver_manager.firefox import GeckoDriverManager           # For Firefox
-
-
 class web_driver():
     options = webdriver.ChromeOptions()
     options.add_experimental_option('excludeSwitches', ['enable-logging'])
