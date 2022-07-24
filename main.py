@@ -8,11 +8,30 @@ input_file = file_reader('demats.txt')
 # Gets the value from the lines of the input file
 demats = input_parser(input_file)
 
+
+
+# Description Banner for the tool
+print ("""
+-----------------------------------------------------------------------------------------
+
+ █████╗ ██╗   ██╗████████╗ ██████╗     ██╗██████╗  ██████╗     ██████╗  ██████╗ ████████╗
+██╔══██╗██║   ██║╚══██╔══╝██╔═══██╗    ██║██╔══██╗██╔═══██╗    ██╔══██╗██╔═══██╗╚══██╔══╝
+███████║██║   ██║   ██║   ██║   ██║    ██║██████╔╝██║   ██║    ██████╔╝██║   ██║   ██║   
+██╔══██║██║   ██║   ██║   ██║   ██║    ██║██╔═══╝ ██║   ██║    ██╔══██╗██║   ██║   ██║   
+██║  ██║╚██████╔╝   ██║   ╚██████╔╝    ██║██║     ╚██████╔╝    ██████╔╝╚██████╔╝   ██║   
+╚═╝  ╚═╝ ╚═════╝    ╚═╝    ╚═════╝     ╚═╝╚═╝      ╚═════╝     ╚═════╝  ╚═════╝    ╚═╝   
+-----------------------------------------------------------------------------------------
+Author: Bipin Thapa
+Github repository: https://github.com/bipin0x01/meroshare-bot
+Twitter: @kaji0x01
+Facebook: https://www.facebook.com/bt.kaji
+-----------------------------------------------------------------------------------------
+       """)
+
 # List all open IPOS in a table using the first account given by user
 try:
     number_of_accounts = len(demats)
     print(f'Number of accounts Detected: {number_of_accounts}')
-
     for account in demats:
         name, dp_id, username, password, crn, txn_pin = [account[i] for i in range(6)]
 
