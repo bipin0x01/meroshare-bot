@@ -120,11 +120,11 @@ def apply_ipo(kitta,crn,txn_pin):
 
         banks.pop(0)  # remove the first bank from the list
         col_names = ["option", "Bank Name"]
-        termcolor.cprint(tabulate(banks, headers=col_names, tablefmt="grid"),'red')
+        termcolor.cprint(tabulate(banks, headers=col_names, tablefmt="grid"),'green')
         selected_bank = int(input("Select the respective option to continue:"))
         # Select the bank chosen by the User
 
-        web_driver.driver.find_element(By.XPATH,"//*[@id='selectBank']/option[" + str(selected_bank+1) + "]").click()
+        web_driver.driver.find_element(By.XPATH,"//*[@id='selectBank']/option[" + str(selected_bank-1) + "]").click()
 
     else:
         # If only one bank account is linked, choose the first one
