@@ -52,4 +52,4 @@ Use Meroshare Bot to fill ipo with all demats at once and get IPOs alloted. IPO 
 So, Do you need more value?
 Wanna feed my belly then?
 
-[![Donate Now](https://img.shields.io/badge/Donate-green.svg)](https://www.buymeamomo.com/bt.kaji)
+<a href="https://www.buymeamomo.com/bt.kaji"><img src="https://img.shields.io/badge/Donate-green.svg?style=for-the-badge" alt="Donate Now" height="40"/></a>
